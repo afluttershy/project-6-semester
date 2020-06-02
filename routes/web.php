@@ -16,5 +16,6 @@ Route::get('/contacts', 'MainController@contacts');
 
 Route::get('/auth', 'MainController@auth');
 Route::get('/cart', 'MainController@cart');
+Route::get('/item', 'MainController@menuitem');
 
 

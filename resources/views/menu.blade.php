@@ -1,36 +1,76 @@
 @extends('layout')
 
 @section('content')
-    <div class="menu-page">
-        <h1>Меню</h1>
-        <form method="POST" action="#">
-            <div class="price">
-                <label>Цена:</label>
-                <input requried class="form-control" type="login" name="login" placeholder="От">
-                <input requried class="form-control" type="password" name="password" placeholder="До">
-            </div>
-            <div class="type">
-                <label>Тип:</label>
-                <label><input type="checkbox" name="option1" value="1">Пицца</label>
-                <label><input type="checkbox" name="option2" value="2">Суши</label>
-                <label><input type="checkbox" name="option3" value="3">Паста</label>
-                <label><input type="checkbox" name="option4" value="4">Напитки</label>
-                <label><input type="checkbox" name="option5" value="5">Десерты</label>
-                <label><input type="checkbox" name="option6" value="6">Комбо наборы</label>
 
-            </div>
-            <button type="submit" class="btn">Применить</button>
-            <a href="#"><div class="dismiss">Сбросить</div></a>
-        </form>
-        <div class="list">
-            <div>
-                <img src="../img/square-images/pizza1.png">
-                <h2>Название<h2>
-                <h3>999 &#8381;</h3>
-                <form method="POST" action="#">
-                    <button type="submit" class="btn-cart"><img src="../img/icon-cart.png"></button>
+    <div class="menu-page">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ url('/') }}">Главная</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Меню</li>
+            </ol>
+        </nav>
+        <h1>Меню</h1>
+        <div class="content">
+            <div class="filters">
+                <form class="menu-form" method="POST" action="#">
+                    <div class="price">
+                        <p>Цена:</p>
+                        <input class="form-control" type="text" name="from" placeholder="От">
+                        <input class="form-control" type="text" name="to" placeholder="До">
+                    </div>
+                    <div class="type">
+                        <p>Тип:</p>
+                        <label><input type="checkbox" name="option1" value="1">Пицца</label>
+                        <label><input type="checkbox" name="option2" value="2">Суши</label>
+                        <label><input type="checkbox" name="option3" value="3">Паста</label>
+                        <label><input type="checkbox" name="option4" value="4">Напитки</label>
+                        <label><input type="checkbox" name="option5" value="5">Десерты</label>
+                        <label><input type="checkbox" name="option6" value="6">Комбо наборы</label>
+
+                    </div>
+                    <button type="submit" class="filters-btn">Применить</button>
+                    <a href="#" class="dismiss"><div>Сбросить</div></a>
                 </form>
             </div>
-        </div> 
+            <div class="list">
+                <div>
+                    <img src="../img/square-images/pizza1.png">
+                    <h2>Пицца «Фермерская» 30 см</h2>
+                    <h3>999 &#8381;</h3>
+                    <a href="{{ url('/item') }}"><img src="../img/icon-cart.png"></a>
+                </div>
+                <div>
+                    <img src="../img/square-images/pizza1.png">
+                    <h2>Название</h2>
+                    <h3>999 &#8381;</h3>
+                    <a href="{{ url('/menu') }}"><img src="../img/icon-cart.png"></a>
+                </div>
+                <div>
+                    <img src="../img/square-images/pizza1.png">
+                    <h2>Название</h2>
+                    <h3>999 &#8381;</h3>
+                    <a href="{{ url('/menu') }}"><img src="../img/icon-cart.png"></a>
+                </div>
+                <div>
+                    <img src="../img/square-images/pizza1.png">
+                    <h2>Название</h2>
+                    <h3>999 &#8381;</h3>
+                    <a href="{{ url('/menu') }}"><img src="../img/icon-cart.png"></a>
+                </div>
+                <div>
+                    <img src="../img/square-images/pizza1.png">
+                    <h2>Название</h2>
+                    <h3>999 &#8381;</h3>
+                    <a href="{{ url('/menu') }}"><img src="../img/icon-cart.png"></a>
+                </div>
+                <div>
+                    <img src="../img/square-images/pizza1.png">
+                    <h2>Название</h2>
+                    <h3>999 &#8381;</h3>
+                    <a href="{{ url('/menu') }}"><img src="../img/icon-cart.png"></a>
+                </div>
+                
+            </div> 
+        </div>
     </div>
 @endsection

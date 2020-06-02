@@ -20,6 +20,10 @@
 main {
     flex: 1 0 auto;
 }
+.breadcrumb {
+    background-color: #FFF1ED;
+
+}
 /* Хедер */
 .logo {
     width: 100%;
@@ -290,8 +294,10 @@ footer img {
 
 /* Контакты */
 .contacts-page {
-    margin-top: 40px;
     margin-bottom: 0px;
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
 }
 .contacts-page h1 {
     text-align: center;
@@ -320,7 +326,7 @@ footer img {
 }
 .contacts-top img {
     position: absolute;
-    top: 110px;
+    top: 148px;
     right: 80px;
     width: 100%;
     max-width: 300px;
@@ -346,3 +352,205 @@ footer img {
     margin-bottom: -10px;
 }
 /* Конец стилей контакты */
+
+/*Акции*/
+.sale-page {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+.sale-page h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    padding-bottom: 20px;
+}
+.sale-divs {
+    width: 100%;
+    max-width: 1900px;
+    margin: 0 auto;
+    margin-bottom: 70px;
+}
+.sale-one img, .sale-one div {
+    display: inline-block;
+    vertical-align: top;
+}
+.sale-one {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #374B73;
+    border-radius: 120px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.sale-info {
+    width: 100%;
+    max-width: 600px;
+    margin-left: 20px;
+    margin-top: 40px;
+    margin-right: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.sale-info h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.sale-info p {
+    font-size: 20px;
+    font-weight: normal;
+    text-align: left;
+    height: 100%;
+    min-height: 100px;
+}
+.sale-one img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 120px;
+}
+.sale-one .btn-main:hover {
+    background-color: #FF8197;
+}
+/*Конец стилей акции*/
+
+/*Меню*/
+.menu-page {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+.menu-page .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.menu-page h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    padding-bottom: 20px;
+}
+.menu-page .filters, .menu-page .list {
+  
+}
+.menu-page .list {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: stretch;
+}
+.filters form {
+    padding: 30px 40px 50px 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background: rgba(55, 75, 115, 0.15);
+    border-radius: 120px;
+}
+.filters {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+.filters form .type label{
+    display: block;
+}
+.filters form .type {
+    margin-bottom: 20px;
+}
+.filters .price input  {
+    width: 60px;
+}
+.filters p {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.filters label {
+    font-size: 18px;
+}
+.filters label input {
+    margin-right: 10px;
+}
+.filters .price input {
+    display: inline-block;
+}
+.menu-page .list img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 120px;
+}
+.menu-page .list div a img {
+    width: 100%;
+    max-width: 40px;
+}
+.menu-page .list div {
+    /*display: inline-block;
+    vertical-align: top;*/
+    width: 100%;
+    max-width: 200px;
+    margin: 0px 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #374B73;
+    border-radius: 120px;
+    color: white;
+    position:relative;
+    padding-bottom:50px;
+}
+.menu-page .list div h2 {
+    font-size: 20px;
+}
+.menu-page .list div a {
+    position:absolute;
+    bottom: 10px;
+    left: 82px;
+}
+.dismiss, .filters-btn {
+    background-color: #FF9A9A;
+    border: 0px;
+    border-radius: 120px;
+    color: white;
+    padding: 5px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 170px;
+    margin-top: 10px;
+    text-align: center;
+    display: block;
+}
+.filters-btn:hover {
+    background-color: #374B73;
+    color: white;
+}
+.dismiss {
+    background: rgba(255, 154, 154, 0.5);
+    text-decoration: none;
+}
+.dismiss:hover {
+    text-decoration: none;
+    color: #374B73;
+}
+
+/*Конец стилей меню*/
+
+/*Карточка товара*/
+.menu-item-page {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+.menu-item-page img {
+    width: 100%;
+    max-width: 350px;
+}
+/*Конец стилей карточки товара*/
