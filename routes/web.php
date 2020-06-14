@@ -19,3 +19,7 @@ Route::get('/cart', 'MainController@cart');
 Route::get('/item', 'MainController@menuitem');
 
 
+Route::get('/sale', function () {
+    $sales = DB::table('pdsales')->get();
+    return compact('sales');
+});

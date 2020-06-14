@@ -10,7 +10,19 @@
         </nav>
         <h1>Акции</h1>
         <div class="sale-divs">
-            <div class="sale-one">
+
+            @foreach ($sales as $sale)
+                <div class="sale-one">
+                    <div class="sale-info">
+                        <h2>{{ $task->name }}</h2>
+                        <p>{{ $task->description }}</p>
+                        <a href="{{ url('/menu') }}" class="btn-main">Меню</a>
+                    </div>
+                </div> 
+            @endforeach
+
+
+            <!--<div class="sale-one">
                 <img src="../img/square-images/pizza1.png">
                 <div class="sale-info">
                     <h2>Давай две!</h2>
@@ -25,7 +37,7 @@
                     <p> Очень-очень длинное-длинное описание акции</p>
                     <a href="{{ url('/menu') }}" class="btn-main">Меню</a>
                 </div>
-            </div>   
+            </div>-->   
         </div>
     </div>
 @endsection
