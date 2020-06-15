@@ -13,9 +13,10 @@
 
             @foreach ($sales as $sale)
                 <div class="sale-one">
+                    <img src="../img/square-images/pizza1.png">
                     <div class="sale-info">
-                        <h2>{{ $task->name }}</h2>
-                        <p>{{ $task->description }}</p>
+                        <h2>{{ $sale->name }}</h2>
+                        <p>{{ $sale->description }}</p>
                         <a href="{{ url('/menu') }}" class="btn-main">Меню</a>
                     </div>
                 </div> 

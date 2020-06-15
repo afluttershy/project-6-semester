@@ -33,7 +33,19 @@
                 </form>
             </div>
             <div class="list">
-                <div>
+
+                @foreach ($products as $product)
+                    <div>
+                        <img src="../img/square-images/pizza1.png">
+                        <h2>{{ $product->name }}</h2>
+                        <h3>{{ $product->price }} &#8381;</h3>
+                        <a href="{{$product->id}}"><img src="../img/icon-cart.png"></a>
+                    </div>           
+                @endforeach
+
+
+
+                <!--<div>
                     <img src="../img/square-images/pizza1.png">
                     <h2>Пицца «Фермерская» 30 см</h2>
                     <h3>999 &#8381;</h3>
@@ -44,31 +56,8 @@
                     <h2>Название</h2>
                     <h3>999 &#8381;</h3>
                     <a href="{{ url('/menu') }}"><img src="../img/icon-cart.png"></a>
-                </div>
-                <div>
-                    <img src="../img/square-images/pizza1.png">
-                    <h2>Название</h2>
-                    <h3>999 &#8381;</h3>
-                    <a href="{{ url('/menu') }}"><img src="../img/icon-cart.png"></a>
-                </div>
-                <div>
-                    <img src="../img/square-images/pizza1.png">
-                    <h2>Название</h2>
-                    <h3>999 &#8381;</h3>
-                    <a href="{{ url('/menu') }}"><img src="../img/icon-cart.png"></a>
-                </div>
-                <div>
-                    <img src="../img/square-images/pizza1.png">
-                    <h2>Название</h2>
-                    <h3>999 &#8381;</h3>
-                    <a href="{{ url('/menu') }}"><img src="../img/icon-cart.png"></a>
-                </div>
-                <div>
-                    <img src="../img/square-images/pizza1.png">
-                    <h2>Название</h2>
-                    <h3>999 &#8381;</h3>
-                    <a href="{{ url('/menu') }}"><img src="../img/icon-cart.png"></a>
-                </div>
+                </div>-->
+                
                 
             </div> 
         </div>

@@ -21,7 +21,7 @@ class CreatePdproductsTable extends Migration
             $table->integer('proteins');
             $table->integer('fats');
             $table->integer('carbohydrates');
-            $table->integer('energy-value');
+            $table->integer('energy');
             $table->integer('price');
             $table->timestamps();
         });

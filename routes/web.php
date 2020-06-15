@@ -16,10 +16,22 @@ Route::get('/contacts', 'MainController@contacts');
 
 Route::get('/auth', 'MainController@auth');
 Route::get('/cart', 'MainController@cart');
-Route::get('/item', 'MainController@menuitem');
+//Route::get('/item', 'MainController@menuitem');
 
 
 Route::get('/sale', function () {
     $sales = DB::table('pdsales')->get();
-    return compact('sales');
+    return view('sale', compact('sales'));
+});
+
+
+
+Route::get('/menu', function () {
+    $products = DB::table('pdproducts')->get();
+    return view('menu', compact('products'));
+});
+
+Route::get('/{product}', function ($id) {
+    $product = DB::table('pdproducts')->find($id);
+    return view('menu-item', compact('product'));
 });

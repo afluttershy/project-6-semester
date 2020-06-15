@@ -25,7 +25,7 @@ class MainController extends Controller
     public function cart() {
         return view('cart');
     }
-    public function menuitem() {
-        return view('menu-item');
-    }
+    // public function menuitem() {
+    //     return view('menu-item');
+    //  }
 }
