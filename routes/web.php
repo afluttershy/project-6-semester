@@ -2,6 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
+Auth::routes([
+    'reset' => false,
+    'confirm' => false,
+    'verify' => false
+]);
+
+//Route::get('/home', 'HomeController@index')->name('home');
+
 // Route::get('/', function () {
 //     return view('index');
 // });
@@ -35,3 +43,4 @@ Route::get('/{product}', function ($id) {
     $product = DB::table('pdproducts')->find($id);
     return view('menu-item', compact('product'));
 });
+
