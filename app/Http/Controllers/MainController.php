@@ -20,7 +20,7 @@ class MainController extends Controller
     }
 
     public function auth() {
-        return view('auth');
+        return view('auth/auth');
     }
     public function cart() {
         return view('cart');

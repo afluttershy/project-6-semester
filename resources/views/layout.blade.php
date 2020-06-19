@@ -23,7 +23,7 @@
                 <div class="time">10:00 - 23:00</div>
                 <div class="enter">
                     <img src="img/icon-auth.png">
-                    <a href="{{ url('/auth') }}">Войти</a>
+                    <a href="{{ url('/login') }}">Войти</a>
                 </div>
                 <div class="cart">
                     <img src="img/icon-cart.png">
