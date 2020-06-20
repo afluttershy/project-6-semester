@@ -34,7 +34,7 @@
             </div>
             <div class="list">
 
-                @foreach ($products as $product)
+                @foreach ($productsmodel as $product)
                     <div>
                         <img src="../img/square-images/pizza1.png">
                         <h2>{{ $product->name }}</h2>

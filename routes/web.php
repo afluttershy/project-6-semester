@@ -24,7 +24,7 @@ Route::get('/menu', 'MainController@menu');
 Route::get('/contacts', 'MainController@contacts');
 
 Route::get('/auth', 'MainController@auth');
-Route::get('/cart', 'MainController@cart');
+Route::get('/cart', 'CartController@cart');
 //Route::get('/item', 'MainController@menuitem');
 
 
@@ -35,13 +35,15 @@ Route::get('/sale', function () {
 
 
 
-Route::get('/menu', function () {
-    $products = DB::table('pdproducts')->get();
-    return view('menu', compact('products'));
-});
+//Route::get('/menu', function () {
+    //$products = DB::table('pdproducts')->get();
+    //return view('menu', compact('products'));
+  //  return view('menu');
+//});
 
 Route::get('/{product}', function ($id) {
     $product = DB::table('pdproducts')->find($id);
     return view('menu-item', compact('product'));
 });
 
+Route::post('cart/add/{id}', 'CartController@cartadd')->name('cartadd');

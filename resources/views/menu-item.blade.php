@@ -18,7 +18,11 @@
                 <h2>{{ $product->name }}</h2>
                 <p>{{ $product->description }}</p>
                 <h3>{{ $product->price }} &#8381;</h3>
-                <a href="#" class="btn-main">В корзину <img class="icon" src="../img/icon-cart.png"></a>
+                <form method="POST" action="{{ route('cartadd', $product->id)}}">
+                    <button type="submit" href="#" class="btn-main">В корзину <img class="icon" src="../img/icon-cart.png"></button>
+                    @csrf
+                </form>
+                
             </div>
         </div>
         <div class="menu-item-bottom">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class MainController extends Controller
 {
@@ -13,7 +14,8 @@ class MainController extends Controller
         return view('sale');
     }
     public function menu() {
-        return view('menu');
+        $productsmodel = Product::get();
+        return view('menu', compact('productsmodel'));
     }
     public function contacts() {
         return view('contacts');

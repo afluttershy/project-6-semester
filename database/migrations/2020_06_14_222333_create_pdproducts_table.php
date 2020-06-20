@@ -16,6 +16,7 @@ class CreatePdproductsTable extends Migration
         Schema::create('pdproducts', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('type');
             $table->string('description');
             $table->string('composition');
             $table->integer('proteins');

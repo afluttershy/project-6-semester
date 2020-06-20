@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="/css/css.css">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 </head>
 <body class="body">
     <header>
         <div class="menu-top">
-            <a href="{{ url('/') }}"><img class='logo' src="img/logo.png"></a>
+            <a href="{{ url('/') }}"><img class='logo' src="/img/logo.png"></a>
             <div class="menu-info">
                 <div class="search">
-                    <img src="img/icon-search.png">
+                    <img src="/img/icon-search.png">
                     <form method="POST" action="#">
                         <input class="form-control" type="text" name="search" placeholder="Введите блюдо">
                     </form>
@@ -22,11 +22,11 @@
                 <p class="number">+7 (999) 999-99-99</p>
                 <div class="time">10:00 - 23:00</div>
                 <div class="enter">
-                    <img src="img/icon-auth.png">
+                    <img src="/img/icon-auth.png">
                     <a href="{{ url('/login') }}">Войти</a>
                 </div>
                 <div class="cart">
-                    <img src="img/icon-cart.png">
+                    <img src="/img/icon-cart.png">
                     <a href="{{ url('/cart') }}">Корзина</a>
                 </div>
             </div>
@@ -59,9 +59,9 @@
             </div>
             <div class="right">
                 <h2>+7 (999) 999-99-99</h2>
-                <a href="#"><img src="img/icon-pinterest.png"></a>
-                <a href="#"><img src="img/icon-inst.png"></a>
-                <a href="#"><img src="img/icon-twitter.png"></a>
+                <a href="#"><img src="/img/icon-pinterest.png"></a>
+                <a href="#"><img src="/img/icon-inst.png"></a>
+                <a href="#"><img src="/img/icon-twitter.png"></a>
             </div>
         </div>
         <p>&copy; 2020 ООО “Еда”, официальный сайт</p>

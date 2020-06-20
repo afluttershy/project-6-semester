@@ -12,7 +12,20 @@
         
         <h1>Корзина</h1>
         <div class="cart-divs">
-            <div class="cart-one">
+            @foreach($order->products as $product)
+                <div class="cart-one">
+                    <img src="/img/square-images/pizza1.png">
+                    <div>
+                        <h3>{{ $product->name }}</h3>
+                        <p>130 г</p>
+                    </div>
+                    <p class="price">999 &#8381;</p>
+                    <a href="#"><img class="icon-delete" src="/img/icon-delete.png"></a>
+                </div> 
+
+            @endforeach
+
+            <!--<div class="cart-one">
                 <img src="../img/square-images/pizza1.png">
                 <div>
                     <h3>Пицца «Сингапур» на тонком тесте 30 см</h3>
@@ -29,7 +42,7 @@
                 </div>
                 <p class="price">999 &#8381;</p>
                 <a href="#"><img class="icon-delete" src="img/icon-delete.png"></a>
-            </div> 
+            </div> -->
         </div>
 
 
