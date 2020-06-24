@@ -24,7 +24,7 @@ Route::get('/menu', 'MainController@menu');
 Route::get('/contacts', 'MainController@contacts');
 
 Route::get('/auth', 'MainController@auth');
-Route::get('/cart', 'CartController@cart');
+Route::get('/cart', 'CartController@cart')->name('cart');;
 //Route::get('/item', 'MainController@menuitem');
 
 
@@ -47,3 +47,4 @@ Route::get('/{product}', function ($id) {
 });
 
 Route::post('cart/add/{id}', 'CartController@cartadd')->name('cartadd');
+Route::post('cart/remove/{id}', 'CartController@cartremove')->name('cartremove');

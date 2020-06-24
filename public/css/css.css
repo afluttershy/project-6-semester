@@ -644,19 +644,35 @@ footer img {
     font-size: 40px;
     padding-bottom: 20px;
 }
-.cart-one img, .cart-one p, .cart-one div{
+.cart-one img, .cart-one p, .cart-one div, .cart-one form{
     display: inline-block;
     vertical-align: middle;
 }
+.cart-one form button {
+    width: 40px;
+    margin-top:-20px;
+}
+.cart-page .fullprice {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #374B73;
+}
 .cart-one div {
     width: 100%;
-    max-width: 500px;
+    max-width: 350px;
     margin: 0 50px;
+}
+.cart-one .count {
+    background-color: #FF9A9A;
+    padding: 5px;
+    border-radius: 20px;
 }
 .cart-one .price {
     font-size: 30px;
     font-weight: bold;
     color: #374B73;
+    margin-right: 15px;
 }
 .order-address-form h2 {
     font-weight: bold;
@@ -697,8 +713,11 @@ footer img {
     margin: 0 auto;
     float: none;
     display: block;
-    margin-top: 50px;
+    margin-top: 30px;
     padding: 10px 150px;
     font-size: 30px;
+}
+.order-address-form .bottom p {
+    margin-top: 30px
 }
 /*Конец стилей корзины*/

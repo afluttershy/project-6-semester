@@ -13,23 +13,72 @@ class CartController extends Controller
            
         } 
 
-
+        
         return view('cart', compact('order'));
     }
+
+
+  //  public function cart() {
+    //    $orderID = session('orderID');
+      //  if (!is_null($orderID)) {
+        //    $order = Order::create()->id;
+           
+        //} else{
+          //  $order = Order::find($orderID);
+       // }
+
+        
+       // return view('cart', compact('order'));
+   // }
 
     public function cartadd($productID) {
         $orderID = session('orderID');
         if (is_null($orderID)) {
-            $order = Order::create()->id;
+            $order = Order::create();
             session(['orderID' => $order->id]);
         } else {
             $order = Order::find($orderID);
         }
-        $order -> products()->attach($productID);
+        if($order->products->contains($productID)){
+            $pivotRow = $order->products()->where('product_id', $productID)->first()->pivot;
+            $pivotRow->count++;
+            $pivotRow->update();
+        } else {
+            $order -> products()->attach($productID);
+        }
+
+
+        //$order -> products()->attach($productID);
 
         //dump($order->products);
-       // dump($order);
+        // dump($order);
 
-        return view('cart', compact('order'));
+        //return view('cart', compact('order'));
+        return redirect()->route('cart');
     }
+
+
+    public function cartremove($productID) {
+        $orderID = session('orderID');
+        if (is_null($orderID)) {
+            return redirect()->route('cart');
+        } 
+        $order = Order::find($orderID);
+
+        if($order->products->contains($productID)){
+            $pivotRow = $order->products()->where('product_id', $productID)->first()->pivot;
+            if($pivotRow->count < 2){
+                $order -> products()->detach($productID);
+            }else {
+                $pivotRow->count--;
+                $pivotRow->update();
+            }
+        }
+
+
+
+        //$order->products()->detach($productID);
+        return redirect()->route('cart');
+    }
+
 }

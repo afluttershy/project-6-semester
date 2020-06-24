@@ -11,16 +11,29 @@
 
         
         <h1>Корзина</h1>
+        <p class="fullprice">Общая стоимость заказа: {{$order->getFullPrice()}} рублей</p>
         <div class="cart-divs">
             @foreach($order->products as $product)
+            
                 <div class="cart-one">
                     <img src="/img/square-images/pizza1.png">
                     <div>
                         <h3>{{ $product->name }}</h3>
-                        <p>130 г</p>
+                        <!--<p>130 г</p>-->
                     </div>
-                    <p class="price">999 &#8381;</p>
-                    <a href="#"><img class="icon-delete" src="/img/icon-delete.png"></a>
+                    <p class="price"> {{ $product->price }} &#8381;</p>
+                    <p class="price count">{{ $product->pivot->count }} шт.</p>
+                    <form method="POST" action="{{route('cartadd', $product)}}">
+                        <button type="submit" class="btn btn-success">+</button>
+                        @csrf
+                    </form>
+                    <form method="POST" action="{{route('cartremove', $product)}}">
+                        <button type="submit" class="btn btn-danger">-</button>
+                        @csrf
+                    </form>
+                    <!--<p>{{$product->getPriceForCount()}}</p>-->
+
+                   <!--<a href="#"><img class="icon-delete" src="/img/icon-delete.png"></a>-->
                 </div> 
 
             @endforeach
@@ -87,6 +100,7 @@
             </div>
             <div class="bottom">
                 <a href="#">Страница для печати деталей заказа</a>
+                <p class="fullprice">К оплате: {{$order->getFullPrice()}} рублей</p>
                 <button type="submit" class="btn-auth">Оформить заказ</button>
             </div>
         </form>
