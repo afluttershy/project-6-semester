@@ -10,6 +10,9 @@
             </ol>
         </nav>
         <h1>Меню</h1>
+        @if (session()->has('success'))
+            <div class="alert alert-success" style="text-align:center;" role="alert">{{ session()->get('success')}}</div>
+        @endif
         <div class="content">
             <div class="filters">
                 <form class="menu-form" method="POST" action="#">

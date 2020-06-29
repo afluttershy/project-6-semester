@@ -60,21 +60,21 @@
 
 
 
-        <form class="order-address-form">
+        <form method="POST" action="{{ route('cartconfirm') }}" class="order-address-form">
             <h2>Укажите адрес доставки</h2>
             <div class="form-div adress">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="street">Улица</label>
-                        <input requried type="text" class="form-control" id="street">
+                        <input requried type="text" name="street" class="form-control" id="street">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="house">Дом</label>   
-                        <input requried type="text" class="form-control" id="house">
+                        <input requried type="text" name="house" class="form-control" id="house">
                     </div>
                     <div class="form-group col-md-2">
                         <label for="flat">Квартира</label>
-                        <input requried type="text" class="form-control" id="flat">
+                        <input requried type="text" name="flat" class="form-control" id="flat">
                     </div>
                 </div>
             </div>
@@ -91,13 +91,14 @@
                     </div>
                 </div>
             </div>
-            <h2>Оплата при получении</h2>
+           <!-- <h2>Оплата при получении</h2>
             <div class="form-div payment">
                 <div class="form-group">
                     <label><input type="checkbox" name="option1" value="1">Наличными</label>
                     <label><input type="checkbox" name="option2" value="2">Банковской картой</label>
                 </div>
-            </div>
+            </div>-->
+            @csrf
             <div class="bottom">
                 <a href="#">Страница для печати деталей заказа</a>
                 <p class="fullprice">К оплате: {{$order->getFullPrice()}} рублей</p>

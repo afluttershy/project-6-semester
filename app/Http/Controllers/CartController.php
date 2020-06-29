@@ -81,4 +81,34 @@ class CartController extends Controller
         return redirect()->route('cart');
     }
 
+
+
+    public function cartconfirm(Request $request) {
+
+        $orderID = session('orderID');
+        if (is_null($orderID)) {
+            return redirect()->route('cart');
+        } 
+        $order = Order::find($orderID);
+
+        $order->street = $request->street;
+        $order->house = $request->house;
+        $order->flat = $request->flat;
+        $order->name = $request->name;
+        $order->tel = $request->tel;
+        
+        $order->status = 1;
+        
+        $order->save();
+
+        session()->forget('orderID');
+
+        session()->flash('success', 'Ваш заказ принят в обработку! Вам скоро перезвонят.');
+        return redirect()->route('menu');
+
+        //dd($request->name);
+
+    }
+
+
 }
