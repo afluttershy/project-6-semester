@@ -16,7 +16,7 @@
                 <div class="search">
                     <img src="/img/icon-search.png">
                     <form method="GET" action="{{ route('menu')}}">
-                        <input class="form-control" type="text" name="search" placeholder="Введите полное название блюда" value="{{request()->search}}">
+                        <input class="form-control" type="text" name="search" placeholder="Введите блюдо" value="{{request()->search}}">
                     </form>
                 </div>
                 <p class="number">+7 (999) 999-99-99</p>
@@ -38,10 +38,10 @@
         </div>
         <div class="menu-list">
             <ul>  
-                <a href="{{ url('/') }}"><li>Главная</li></a>
-                <a href="{{ url('/sale') }}"><li>Акции</li></a>
-                <a href="{{ url('/menu') }}"><li>Меню</li></a>
-                <a href="{{ url('/contacts') }}"><li>Контакты</li></a>
+                <a @if(Route::currentRouteNamed('index')) class="active" @endif href="{{ route('index') }}"><li>Главная</li></a>
+                <a @if(Route::currentRouteNamed('sale')) class="active" @endif href="{{ route('sale') }}"><li>Акции</li></a>
+                <a @if(Route::currentRouteNamed('menu')) class="active" @endif href="{{ route('menu') }}"><li>Меню</li></a>
+                <a @if(Route::currentRouteNamed('contacts')) class="active" @endif href="{{ route('contacts') }}"><li>Контакты</li></a>
             </ul>
         </div>
     </header>

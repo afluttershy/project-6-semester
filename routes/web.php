@@ -26,9 +26,9 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('getlogout');
 // });
 
 Route::get('/', 'MainController@index')->name('index');
-Route::get('/sale', 'MainController@sale')->name('sale');
+//Route::get('/sale', 'MainController@sale')->name('sale');
 Route::get('/menu', 'MainController@menu')->name('menu');
-Route::get('/contacts', 'MainController@contacts');
+Route::get('/contacts', 'MainController@contacts')->name('contacts');
 
 Route::get('/auth', 'MainController@auth');
 Route::get('/cart', 'CartController@cart')->name('cart');
@@ -38,7 +38,7 @@ Route::get('/cart', 'CartController@cart')->name('cart');
 Route::get('/sale', function () {
     $sales = DB::table('pdsales')->get();
     return view('sale', compact('sales'));
-});
+})->name('sale');
 
 
 

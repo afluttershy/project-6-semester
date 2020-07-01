@@ -101,6 +101,11 @@ header input[type="text"] {
     color: #FF9A9A;
     border: 1px solid #FF9A9A;
 } 
+.menu-list .active {
+    text-decoration: none;
+    color: #FF9A9A;
+    border: 1px solid #FF9A9A;
+}
 /* Конец стилей хедер */
 
 /* Футер */
@@ -437,9 +442,6 @@ footer img {
     font-weight: bold;
     font-size: 40px;
     padding-bottom: 20px;
-}
-.menu-page .filters, .menu-page .list {
-  
 }
 .menu-page .list {
     width: 100%;
