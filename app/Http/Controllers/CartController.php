@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -47,6 +48,10 @@ class CartController extends Controller
             $order -> products()->attach($productID);
         }
 
+        if (Auth::check()) {
+             $order->user_id = Auth::id();
+             $order->save();
+        }
 
         //$order -> products()->attach($productID);
 
@@ -100,7 +105,7 @@ class CartController extends Controller
         $order->status = 1;
         
         $order->save();
-
+        //dd($request->name);
         session()->forget('orderID');
 
         session()->flash('success', 'Ваш заказ принят в обработку! Вам скоро перезвонят.');

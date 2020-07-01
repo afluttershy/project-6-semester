@@ -28,6 +28,11 @@ class MainController extends Controller
                 $productsQuery->where($field, 1);
             }
         }
+
+        if ($request->filled('search')){
+            $search = $request->input('search');
+            $productsQuery->where('name', 'like', "%$search%");
+        }
             
 
 
@@ -45,6 +50,10 @@ class MainController extends Controller
     }
     public function cart() {
         return view('cart');
+    }
+
+    public function editor() {
+        return view('editor');
     }
     // public function menuitem() {
     //     return view('menu-item');

@@ -8,8 +8,15 @@ Auth::routes([
     'verify' => false
 ]);
 
-Route::get('/home', 'HomeController@index')->name('home');
 
+Route::group(['middleware' => 'auth'], function() {
+    Route::group(['middleware' => 'is_admin'], function() {
+        Route::get('/home', 'HomeController@index')->name('home');
+    });
+});
+Route::get('/editor', 'MainController@editor')->name('editor');
+
+Route::get('/logout', 'Auth\LoginController@logout')->name('getlogout');
 
 // Route::get('/', function () {
 //     return view('index');
@@ -19,7 +26,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // });
 
 Route::get('/', 'MainController@index')->name('index');
-Route::get('/sale', 'MainController@sale');
+Route::get('/sale', 'MainController@sale')->name('sale');
 Route::get('/menu', 'MainController@menu')->name('menu');
 Route::get('/contacts', 'MainController@contacts');
 
@@ -50,4 +57,4 @@ Route::post('cart/add/{id}', 'CartController@cartadd')->name('cartadd');
 Route::post('cart/remove/{id}', 'CartController@cartremove')->name('cartremove');
 
 
-Route::post('/cart', 'CartController@cartconfirm')->name('cartconfirm');;
+Route::post('/cart', 'CartController@cartconfirm')->name('cartconfirm');

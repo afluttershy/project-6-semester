@@ -15,15 +15,20 @@
             <div class="menu-info">
                 <div class="search">
                     <img src="/img/icon-search.png">
-                    <form method="POST" action="#">
-                        <input class="form-control" type="text" name="search" placeholder="Введите блюдо">
+                    <form method="GET" action="{{ route('menu')}}">
+                        <input class="form-control" type="text" name="search" placeholder="Введите полное название блюда" value="{{request()->search}}">
                     </form>
                 </div>
                 <p class="number">+7 (999) 999-99-99</p>
                 <div class="time">10:00 - 23:00</div>
                 <div class="enter">
                     <img src="/img/icon-auth.png">
+                    @guest
                     <a href="{{ url('/login') }}">Войти</a>
+                    @endguest
+                    @auth
+                    <a href="{{ route('getlogout') }}">Выйти</a>
+                    @endauth
                 </div>
                 <div class="cart">
                     <img src="/img/icon-cart.png">

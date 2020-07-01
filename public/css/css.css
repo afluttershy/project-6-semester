@@ -75,6 +75,9 @@ header input[type="text"] {
     border-radius: 20px;
     border: 0px;
 }
+.search form input {
+    width: 280px;
+}
 .menu-info p {
     margin-bottom: 0;
 }
