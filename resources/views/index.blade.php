@@ -9,17 +9,17 @@
         <div class="popular">
             <h1>Популярное</h1>
             <div class="popular-divs">
-                <a href="#"><div>
+                <a href="/menu?from=&to=&pizza=1"><div>
                     <img src="../img/square-images/pizza1.png">
                     <p>Пицца</p>
                 </div></a>
-                <a href="#"><div>
+                <a href="/menu?from=&to=&sushi=1"><div>
                     <img src="../img/square-images/sushi1.png">
                     <p>Cуши</p>
                 </div></a>
-                <a href="#"><div>
-                    <img src="../img/square-images/noodles1.png">
-                    <p>Паста</p>
+                <a href="/menu?from=&to=&sweet=1"><div>
+                    <img src="../img/square-images/sweet1.png">
+                    <p>Десерты</p>
                 </div></a>
             </div>
             <a href="/menu" class="btn-main">Заказать</a>

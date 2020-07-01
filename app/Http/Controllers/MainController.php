@@ -13,8 +13,27 @@ class MainController extends Controller
     public function sale() {
         return view('sale');
     }
-    public function menu() {
+    public function menu(Request $request) {
+        $productsQuery = Product::query();
+
+        if ($request->filled('from')){
+            $productsQuery->where('price', '>=', $request->from);
+        }
+        if ($request->filled('to')){
+            $productsQuery->where('price', '<=', $request->to);
+        }
+
+        foreach (['pizza', 'sushi', 'drink', 'sweet'] as $field) {
+            if ($request->has($field)){
+                $productsQuery->where($field, 1);
+            }
+        }
+            
+
+
         $productsmodel = Product::get();
+        $productsmodel = $productsQuery->paginate(6)->withPath("?" . $request->getQueryString());
+
         return view('menu', compact('productsmodel'));
     }
     public function contacts() {

@@ -539,7 +539,12 @@ footer img {
     text-decoration: none;
     color: #374B73;
 }
-
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 30px;
+}
 /*Конец стилей меню*/
 
 /*Карточка товара*/

@@ -15,24 +15,21 @@
         @endif
         <div class="content">
             <div class="filters">
-                <form class="menu-form" method="POST" action="#">
+                <form class="menu-form" method="GET" action="{{ route('menu') }}">
                     <div class="price">
                         <p>Цена:</p>
-                        <input class="form-control" type="text" name="from" placeholder="От">
-                        <input class="form-control" type="text" name="to" placeholder="До">
+                        <input class="form-control" type="text" name="from" placeholder="От" value="{{request()->from}}">
+                        <input class="form-control" type="text" name="to" placeholder="До" value="{{request()->to}}">
                     </div>
                     <div class="type">
                         <p>Тип:</p>
-                        <label><input type="checkbox" name="option1" value="1">Пицца</label>
-                        <label><input type="checkbox" name="option2" value="2">Суши</label>
-                        <label><input type="checkbox" name="option3" value="3">Паста</label>
-                        <label><input type="checkbox" name="option4" value="4">Напитки</label>
-                        <label><input type="checkbox" name="option5" value="5">Десерты</label>
-                        <label><input type="checkbox" name="option6" value="6">Комбо наборы</label>
-
+                        <label><input type="checkbox" name="pizza" value="1" @if(request()->has('pizza')) checked @endif >Пицца</label>
+                        <label><input type="checkbox" name="sushi" value="1" @if(request()->has('sushi')) checked @endif >Суши</label>
+                        <label><input type="checkbox" name="drink" value="1" @if(request()->has('drink')) checked @endif >Напитки</label>
+                        <label><input type="checkbox" name="sweet" value="1" @if(request()->has('sweet')) checked @endif >Десерты</label>
                     </div>
                     <button type="submit" class="filters-btn">Применить</button>
-                    <a href="#" class="dismiss"><div>Сбросить</div></a>
+                    <a href="{{ route('menu') }}" class="dismiss"><div>Сбросить</div></a>
                 </form>
             </div>
             <div class="list">
@@ -45,8 +42,6 @@
                         <a href="{{$product->id}}"><img src="../img/icon-cart.png"></a>
                     </div>           
                 @endforeach
-
-
 
                 <!--<div>
                     <img src="../img/square-images/pizza1.png">
@@ -63,6 +58,9 @@
                 
                 
             </div> 
+        </div>
+        <div class="links">
+            {{$productsmodel->links()}}
         </div>
     </div>
 @endsection
