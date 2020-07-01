@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Order;
+use Illuminate\Support\Facades\Auth;
 
 class MainController extends Controller
 {
@@ -55,6 +57,19 @@ class MainController extends Controller
     public function editor() {
         return view('editor');
     }
+
+    public function myorders() {
+        $id = Auth::id();
+        $ordersQuery = Order::query();
+        $ordersQuery->where('user_id', $id);
+        $ordersQuery->where('status', 1);
+
+
+        $myorders = Order::get();
+        $myorders = $ordersQuery->paginate(100);
+        return view('myorders', compact('myorders'));
+    }
+    
     // public function menuitem() {
     //     return view('menu-item');
     //  }

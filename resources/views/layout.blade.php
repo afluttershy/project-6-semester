@@ -27,7 +27,8 @@
                     <a href="{{ url('/login') }}">Войти</a>
                     @endguest
                     @auth
-                    <a href="{{ route('getlogout') }}">Выйти</a>
+                    <a href="{{ route('myorders') }}">Мои заказы</a>
+                    <a href="{{ route('getlogout') }}" style="color:#E75536;">Выйти</a>
                     @endauth
                 </div>
                 <div class="cart">

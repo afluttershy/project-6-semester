@@ -731,3 +731,20 @@ footer img {
     margin-top: 30px
 }
 /*Конец стилей корзины*/
+
+/*Начало стилей мои заказы*/
+.myorders-page {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+.myorders-page h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    padding-bottom: 20px;
+}
+.myorders-page .table {
+    margin-bottom: 150px;
+}
+/*Конец стилей мои заказы*/
