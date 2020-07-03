@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Middleware;
-
-use Closure;
 use Illuminate\Support\Facades\Auth;
+use Closure;
 
-class CheckIsAdmin
+class CheckIsEditor
 {
     /**
      * Handle an incoming request.
@@ -17,7 +16,7 @@ class CheckIsAdmin
     public function handle($request, Closure $next)
     {
         $user = Auth::user();
-        if (!$user->isAdmin()){
+        if (!$user->isEditor()){
             return redirect()->route('index');
         }
         return $next($request);

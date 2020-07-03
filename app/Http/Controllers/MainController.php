@@ -25,11 +25,18 @@ class MainController extends Controller
             $productsQuery->where('price', '<=', $request->to);
         }
 
-        foreach (['pizza', 'sushi', 'drink', 'sweet'] as $field) {
-            if ($request->has($field)){
-                $productsQuery->where($field, 1);
+        $categories=['pizza', 'sushi', 'drink', 'sweet'];
+        foreach ($categories as $value) {
+            if ($request->has($value)){
+                $productsQuery->orWhere($value, 1);
+                //$categories[$key]=1;
             }
         }
+
+        // $productsQuery->orWhere('pizza',  $categories['pizza'])
+        // ->orWhere('sushi',  $categories['sushi'])
+        // ->orWhere('drink',  $categories['drink'])
+        // ->orWhere('sweet',  $categories['sweet']);
 
         if ($request->filled('search')){
             $search = $request->input('search');

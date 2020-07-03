@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Order;
 use Illuminate\Http\Request;
+use App\Http\Requests\CartConfirm;
 use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
@@ -12,8 +13,10 @@ class CartController extends Controller
         if (!is_null($orderID)) {
             $order = Order::findOrFail($orderID);
            
-        } 
-
+        } else {
+            $order = null;
+        }
+//dd($order->products->count());
         
         return view('cart', compact('order'));
     }
@@ -88,7 +91,7 @@ class CartController extends Controller
 
 
 
-    public function cartconfirm(Request $request) {
+    public function cartconfirm(CartConfirm $request) {
 
         $orderID = session('orderID');
         if (is_null($orderID)) {
@@ -96,12 +99,16 @@ class CartController extends Controller
         } 
         $order = Order::find($orderID);
 
+        $price = $order->getFullPrice();
+
+        //dd($price);
+
         $order->street = $request->street;
         $order->house = $request->house;
         $order->flat = $request->flat;
         $order->name = $request->name;
         $order->tel = $request->tel;
-        
+        $order->payment = $price;
         $order->status = 1;
         
         $order->save();

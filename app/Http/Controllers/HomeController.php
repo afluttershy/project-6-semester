@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Order;
+use App\Product;
+use App\Relation;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+       // $ordersQuery = Order::query();
+      //  $ordersQuery->where('status', 1);
+
+        $allorders = Order::where('status', 1)->get();
+        //$allorders = $ordersQuery->paginate(1000);
+    
+        foreach ($allorders as $key => $item) {
+            $allorders[$key]['products'] = $item->orderProducts;
+        } 
+
+
+        return view('home', compact('allorders'));
     }
 }

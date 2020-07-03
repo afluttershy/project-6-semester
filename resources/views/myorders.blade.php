@@ -28,6 +28,9 @@
                 <th>
                     Адрес
                 </th>
+                <th>
+                    Сумма
+                </th>
             </tr>
             @foreach($myorders as $order)
                 <tr>
@@ -36,6 +39,7 @@
                     <td>{{ $order->tel }}</td>
                     <td>{{ $order->created_at->format('H:i d/m/Y') }}</td>
                     <td>{{ $order->street }} {{ $order->house }}, {{ $order->flat }}</td>
+                    <td>{{ $order->payment }}</td>
                 </tr>
             @endforeach
             </tbody>
