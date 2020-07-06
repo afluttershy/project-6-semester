@@ -15,7 +15,10 @@ Route::group(['middleware' => 'auth'], function() {
     });
     
     Route::group(['middleware' => 'is_editor'], function() {
-        Route::get('/editor', 'MainController@editor')->name('editor');
+        //Route::get('/editor', 'MainController@editor')->name('editor');
+        Route::resource('editor', 'Admin\SaleController');
+        Route::resource('editor-menu', 'Admin\ProductController');
+       // Route::get('editor-menu/{product}', 'Admin\ProductController@show');
     });
     Route::get('/myorders', 'MainController@myorders')->name('myorders');
 });
@@ -45,10 +48,11 @@ Route::get('/cart', 'CartController@cart')->name('cart');
 //Route::get('/item', 'MainController@menuitem');
 
 
-Route::get('/sale', function () {
-    $sales = DB::table('pdsales')->get();
-    return view('sale', compact('sales'));
-})->name('sale');
+Route::get('/sale', 'MainController@saleshow')->name('sale');
+// Route::get('/sale', function () {
+//     $sales = DB::table('pdsales')->get();
+//     return view('sale', compact('sales'));
+// })->name('sale');
 
 
 

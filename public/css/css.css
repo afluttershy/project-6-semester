@@ -748,3 +748,26 @@ footer img {
     margin-bottom: 150px;
 }
 /*Конец стилей мои заказы*/
+
+/*Начало стилей editor*/
+.editor-page .card {
+    width: 1050px;
+    margin: 0 auto;
+}
+.editor-page .card-header .menu{
+    text-align: center;
+}
+
+.editor-page .card-header a {
+    color: black;
+    margin-right: 30px;
+    font-size: 15pt;
+}
+.editor-page .card-header a:hover {
+    color: #FF9A9A;
+    text-decoration: none;
+}
+.editor-page .card-header .active {
+    color: #FF9A9A;
+}
+/*Конец стилей editor*/

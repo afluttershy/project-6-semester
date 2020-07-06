@@ -17,7 +17,10 @@ class CheckIsAdmin
     public function handle($request, Closure $next)
     {
         $user = Auth::user();
-        if (!$user->isAdmin()){
+        if ($user->is_admin===2){
+            return redirect()->route('editor.index');
+        }
+        if ($user->is_admin===0){
             return redirect()->route('index');
         }
         return $next($request);

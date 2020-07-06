@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Order;
+use App\Sale;
 use Illuminate\Support\Facades\Auth;
 
 class MainController extends Controller
@@ -12,9 +13,9 @@ class MainController extends Controller
     public function index() {
         return view('index');
     }
-    public function sale() {
-        return view('sale');
-    }
+    // public function sale() {
+    //     return view('sale');
+    // }
     public function menu(Request $request) {
         $productsQuery = Product::query();
 
@@ -50,6 +51,15 @@ class MainController extends Controller
 
         return view('menu', compact('productsmodel'));
     }
+
+
+
+    public function saleshow() {
+        $sales = Sale::get();
+
+        return view('sale', compact('sales'));
+    }
+
     public function contacts() {
         return view('contacts');
     }
@@ -64,6 +74,10 @@ class MainController extends Controller
     public function editor() {
         return view('editor');
     }
+    //public function editorMenu() {
+      //  return view('editorMenu');
+    //}
+    
 
     public function myorders() {
         $id = Auth::id();

@@ -2,14 +2,14 @@
 
 @section('content')
 <div class="editor-page">
-    <div class="row justify-content-center">
+    <div class="justify-content-center">
         
             <div class="card">
                 <div class="card-header">
                     <p>Редактор</p> 
                     <div class="menu">
                         <a @if(Route::currentRouteNamed('editor')) class="active" @endif href="{{ route('editor.index') }}">Акции</a>
-                        <a  @if(Route::currentRouteNamed('editor-menu.index')) class="active" @endif href="{{ route('editor-menu.index') }}">Товары</a>
+                        <a @if(Route::currentRouteNamed('editor-menu.index')) class="active" @endif href="{{ route('editor-menu.index') }}">Товары</a>
                     </div>
                 </div>
 
@@ -21,8 +21,8 @@
                     @endif
 
                     <div class="col-md-12">
-                        <h1>Акции</h1>
-                        <a class="btn btn-success" style="float:right; margin-bottom: 30px;" type="button" href="{{ route('editor.create') }}">Добавить новую акцию</a>
+                        <h1>Товары</h1>
+                        <a class="btn btn-success" style="float:right; margin-bottom: 30px;" type="button" href="{{ route('editor-menu.create') }}">Добавить новый товар</a>
                         <table class="table">
                             <tbody>
                             <tr>
@@ -33,20 +33,21 @@
                                     Название
                                 </th>
                                 <th>
-                                    Описание
+                                    Цена
                                 </th>
                                 <th>
                                     Действия
                                 </th>
                             </tr>
-                                @foreach($sales as $sale)
+                                @foreach($products as $product)
                                     <tr>
-                                        <td>{{ $sale->id }}</td>
-                                        <td>{{ $sale->name }}</td>
-                                        <td>{{ $sale->description }}</td>
+                                        <td>{{ $product->id }}</td>
+                                        <td>{{ $product->name }}</td>
+                                        <td>{{ $product->price }}</td>
                                         <td>
                                             <div class="btn-group" role="group">
                                                 <form action="" method="POST">
+                                                    <a class="btn btn-success" type="button" href="{{ route('editor-menu.show', $product->id) }}">Открыть</a>
                                                     <a class="btn btn-warning" type="button" href="">Редактировать</a>
                                                     @csrf
                                                     @method('DELETE')

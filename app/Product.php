@@ -9,6 +9,12 @@ class Product extends Model
 {
     protected $table = 'pdproducts'; 
 
+    protected $fillable = ['name', 'description', 'composition', 'proteins', 'fats', 'carbohydrates', 'energy', 'price', 'pizza', 'sushi', 'drink', 'sweet'];
+    
+    public function getRouteKeyName() {
+        return 'id';
+    }
+
     public function orders(){
         //return $this->belongsToMany(Product::class)->withPivot('count')->withTimestamps();
         return $this->belongsToMany(Order::class, 'order_product');
@@ -19,4 +25,6 @@ class Product extends Model
         }
         return $this->price;
     }
+
+   
 }
