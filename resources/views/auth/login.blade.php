@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="auth-page">
-    <img class="person-auth" src="img/person-auth.png">
+    <img class="person-auth" src="/img/person-auth.png">
 
 
 

@@ -49,7 +49,7 @@
             </div>
 
         </div>
-        <img class="menu-item-person" src="img/person-goodinfo.png">
+        <img class="menu-item-person" src="/img/person-goodinfo.png">
     </div>
 </div>
 @endsection
