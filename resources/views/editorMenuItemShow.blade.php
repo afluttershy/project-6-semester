@@ -21,7 +21,7 @@
                     @endif
 
                     <div class="col-md-12">
-                        <h1>Просмотр товара</h1>
+                        <h1>Просмотр товара ID {{ $product->id }}</h1>
                         <table class="table">
                             <tbody>
                             <tr>
@@ -44,6 +44,34 @@
                             <tr>
                                 <td>Описание</td>
                                 <td>{{ $product->description }}</td>
+                            </tr>
+                            <tr>
+                                <td>Состав</td>
+                                <td>{{ $product->composition }}</td>
+                            </tr>
+                            <tr>
+                                <td>Белки</td>
+                                <td>{{ $product->proteins }}</td>
+                            </tr>
+                            <tr>
+                                <td>Жиры</td>
+                                <td>{{ $product->fats }}</td>
+                            </tr>
+                            <tr>
+                                <td>Углеводы</td>
+                                <td>{{ $product->carbohydrates }}</td>
+                            </tr>
+                            <tr>
+                                <td>Энерг. ценность</td>
+                                <td>{{ $product->energy }}</td>
+                            </tr>
+                            <tr>
+                                <td>Цена</td>
+                                <td>{{ $product->price }}</td>
+                            </tr>
+                            <tr>
+                                <td>Тип (1 - да)</td>
+                                <td>Пицца: {{ $product->pizza }}, суши: {{ $product->sushi }}, напиток: {{ $product->drink }}, десерт: {{ $product->sweet }}</td>
                             </tr>
                             <tr>
                                 <td>Картинка</td>

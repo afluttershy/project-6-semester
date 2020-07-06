@@ -16,8 +16,26 @@ Route::group(['middleware' => 'auth'], function() {
     
     Route::group(['middleware' => 'is_editor'], function() {
         //Route::get('/editor', 'MainController@editor')->name('editor');
-        Route::resource('editor', 'Admin\SaleController');
-        Route::resource('editor-menu', 'Admin\ProductController');
+        Route::resource('/editor', 'Admin\SaleController')->except([
+            'show', 'edit', 'update', 'destroy'
+        ]);
+        Route::get('/editor/{sale}/edit', 'Admin\SaleController@edit')->name('editor-edit');
+        Route::put('/editor/{sale}', 'Admin\SaleController@update')->name('editor.update');
+        Route::delete('/editor/{sale}', 'Admin\SaleController@destroy')->name('editor.destroy');
+        
+        
+        Route::resource('/editor-menu', 'Admin\ProductController')->except([
+            'show', 'edit', 'update', 'destroy'
+        ]);
+        Route::get('/editor-menu/{product}', 'Admin\ProductController@show')->name('editor-menu-show');
+        Route::get('/editor-menu/{product}/edit', 'Admin\ProductController@edit')->name('editor-menu-edit');
+        Route::put('/editor-menu/{product}', 'Admin\ProductController@update')->name('editor-menu.update');
+        Route::delete('/editor-menu/{product}', 'Admin\ProductController@destroy')->name('editor-menu.destroy');
+       
+        
+        
+        //Route::get('/editor-menu/{product}', 'Admin\ProductController@edit')->name('editor-menu-edit');
+        
        // Route::get('editor-menu/{product}', 'Admin\ProductController@show');
     });
     Route::get('/myorders', 'MainController@myorders')->name('myorders');

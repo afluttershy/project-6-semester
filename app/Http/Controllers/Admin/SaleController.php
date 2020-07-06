@@ -61,7 +61,7 @@ class SaleController extends Controller
      */
     public function edit(Sale $sale)
     {
-        //
+        return view('editorNew', compact('sale'));
     }
 
     /**
@@ -73,7 +73,9 @@ class SaleController extends Controller
      */
     public function update(Request $request, Sale $sale)
     {
-        //
+        $sale->update($request->all());
+        $sales = Sale::get();
+        return view('editor', compact('sales'));
     }
 
     /**
@@ -84,6 +86,8 @@ class SaleController extends Controller
      */
     public function destroy(Sale $sale)
     {
-        //
+        $sale->delete();
+        $sales = Sale::get();
+        return view('editor', compact('sales'));
     }
 }

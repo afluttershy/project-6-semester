@@ -50,7 +50,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        dd($product);
+        //dd($product);
         return view('editorMenuItemShow', compact('product'));
     }
 
@@ -62,7 +62,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('editorMenu', compact('product'));
+       //dd($product->name);
+        return view('editorMenuItemNew', compact('product'));
     }
 
     /**
@@ -74,7 +75,11 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+       // dd($product);
+        
+        $product->update($request->all());
+        $products = Product::get();
+        return view('editorMenu', compact('products'));
     }
 
     /**
@@ -85,6 +90,9 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        //dd($product);
+        $product->delete();
+        $products = Product::get();
+        return view('editorMenu', compact('products'));
     }
 }

@@ -20,15 +20,34 @@
                         </div>
                     @endif
 
-                    <form method="POST" enctype="multipart/form-data" action="{{ route('editor.store') }}">
-                        <h1>Добавить новую акцию</h1>
+                    <form method="POST" enctype="multipart/form-data" 
+                    
+                    @isset($sale)
+                        action="{{ route('editor.update', $sale) }}"
+                    @else
+                        action="{{ route('editor.store') }}"
+                    @endisset
+                    
+                    >
+
+                        @isset($sale)
+                            <h1>Редактировать акцию ID {{$sale->id}}</h1>
+                        @else
+                            <h1>Добавить новую акцию</h1>
+                        @endisset
+
                         <div>
+                            @isset($sale)
+                                @method('PUT')
+                            @endisset
                             @csrf
+
+                            <input required type="hidden" class="form-control" name="id" id="id"  value="@isset($sale){{ $sale->id }}@endisset">
 
                             <div class="input-group row">
                                 <label for="name" class="col-sm-2 col-form-label">Название: </label>
                                 <div class="col-sm-6">
-                                    <input required type="text" class="form-control" name="name" id="name">
+                                    <input required type="text" class="form-control" name="name" id="name" value="@isset($sale){{ $sale->name }}@endisset">
                                 </div>
                             </div>
                             <br>
@@ -36,7 +55,7 @@
                             <div class="input-group row">
                                 <label for="description" class="col-sm-2 col-form-label">Описание: </label>
                                 <div class="col-sm-6">
-                                    <textarea required name="description" id="description" cols="58" rows="7"></textarea>
+                                    <textarea required name="description" id="description" cols="58" rows="7">@isset($sale){{ $sale->description }}@endisset</textarea>
                                 </div>
                             </div>
                             <br>
@@ -44,7 +63,7 @@
                             <div class="input-group row">
                                 <label for="image" class="col-sm-2 col-form-label">Картинка: </label>
                                 <div class="col-sm-10">
-                                    <label class="btn btn-default btn-file">
+                                    <label class="btn btn-default btn-file" style="color:blue;">
                                         Загрузить <input type="file" style="display: none;" name="image" id="image">
                                     </label>
                                 </div>

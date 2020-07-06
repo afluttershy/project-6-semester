@@ -46,8 +46,9 @@
                                         <td>{{ $sale->description }}</td>
                                         <td>
                                             <div class="btn-group" role="group">
-                                                <form action="" method="POST">
-                                                    <a class="btn btn-warning" type="button" href="">Редактировать</a>
+                                                <form action="{{ route('editor.destroy', $sale) }}" method="POST">
+                                                    
+                                                    <a class="btn btn-warning" type="button" href="{{ route('editor-edit', $sale->id) }}">Редактировать</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <input class="btn btn-danger" type="submit" value="Удалить">

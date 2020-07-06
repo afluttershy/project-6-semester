@@ -46,9 +46,9 @@
                                         <td>{{ $product->price }}</td>
                                         <td>
                                             <div class="btn-group" role="group">
-                                                <form action="" method="POST">
-                                                    <a class="btn btn-success" type="button" href="{{ route('editor-menu.show', $product->id) }}">Открыть</a>
-                                                    <a class="btn btn-warning" type="button" href="">Редактировать</a>
+                                                <form action="{{ route('editor-menu.destroy', $product) }}" method="POST">
+                                                    <a class="btn btn-success" type="button" href="{{ route('editor-menu-show', $product->id) }}">Открыть</a>
+                                                    <a class="btn btn-warning" type="button" href="{{ route('editor-menu-edit', $product->id) }}">Редактировать</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <input class="btn btn-danger" type="submit" value="Удалить">
