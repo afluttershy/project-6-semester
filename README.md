@@ -7,6 +7,7 @@
 | 171-332     | @afluttershy | Югансон А.Р. |
 
 ### Ссылка на проект:
+http://eda.std-234.ist.mospolytech.ru/
 
 ### Ссылка на лендинг проекта:
 http://ip-landing.std-234.ist.mospolytech.ru/
