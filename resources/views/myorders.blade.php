@@ -31,6 +31,9 @@
                 <th>
                     Сумма
                 </th>
+                <th>
+                    Действия
+                </th>
             </tr>
             @foreach($myorders as $order)
                 <tr>
@@ -40,6 +43,7 @@
                     <td>{{ $order->created_at->format('H:i d/m/Y') }}</td>
                     <td>{{ $order->street }} {{ $order->house }}, {{ $order->flat }}</td>
                     <td>{{ $order->payment }}</td>
+                    <td><a class="btn btn-success" type="button" href="{{ route('printshow', $order) }}">Подробнее</a></td>
                 </tr>
             @endforeach
             </tbody>

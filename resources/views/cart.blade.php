@@ -102,7 +102,6 @@
             </div>-->
             @csrf
             <div class="bottom">
-                <a href="#">Страница для печати деталей заказа</a>
                 <p class="fullprice">К оплате: {{$order->getFullPrice()}} рублей</p>
                 <button type="submit" class="btn-auth">Оформить заказ</button>
             </div>

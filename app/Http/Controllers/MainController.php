@@ -94,4 +94,11 @@ class MainController extends Controller
     // public function menuitem() {
     //     return view('menu-item');
     //  }
+
+
+    public function printshow(Order $order)
+    {
+        //dd($order);
+        return view('printpage', compact('order'));
+    }
 }

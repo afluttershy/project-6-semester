@@ -47,6 +47,7 @@ Route::group(['middleware' => 'auth'], function() {
 
 Route::get('/logout', 'Auth\LoginController@logout')->name('getlogout');
 
+Route::get('/print/{order}', 'MainController@printshow')->name('printshow');
 
 
 // Route::get('/', function () {
