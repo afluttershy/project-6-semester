@@ -36,7 +36,7 @@
 
                 @foreach ($productsmodel as $product)
                     <div>
-                        <img src="../img/square-images/pizza1.png">
+                        <img src="{{ Storage::url($product->image) }}">
                         <h2>{{ $product->name }}</h2>
                         <h3>{{ $product->price }} &#8381;</h3>
                         <a href="{{$product->id}}"><img src="../img/icon-cart.png"></a>

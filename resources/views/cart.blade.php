@@ -18,7 +18,7 @@
             @foreach($order->products as $product)
             
                 <div class="cart-one">
-                    <img src="/img/square-images/pizza1.png">
+                    <img src="{{ Storage::url($product->image) }}">
                     <div>
                         <h3>{{ $product->name }}</h3>
                         <!--<p>130 г</p>-->

@@ -13,7 +13,7 @@
 
             @foreach ($sales as $sale)
                 <div class="sale-one">
-                    <img src="../img/square-images/pizza1.png">
+                    <img src="/img/sale.png">
                     <div class="sale-info">
                         <h2>{{ $sale->name }}</h2>
                         <p>{{ $sale->description }}</p>

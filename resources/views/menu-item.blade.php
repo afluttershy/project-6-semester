@@ -13,7 +13,7 @@
 
     <div class="menu-item">
         <div class="menu-item-top">
-            <img class="item-picture" src="../img/square-images/pizza1.png">
+            <img class="item-picture" src="{{ Storage::url($product->image) }}">
             <div>
                 <h2>{{ $product->name }}</h2>
                 <p>{{ $product->description }}</p>

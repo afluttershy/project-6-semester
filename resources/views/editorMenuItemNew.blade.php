@@ -20,20 +20,20 @@
                         </div>
                     @endif
 
-                    <form method="POST" enctype="multipart/form-data" 
+                    <form method="POST" enctype="multipart/form-data"
                    
-                    @isset($product)
-                        action="{{ route('editor-menu.update', $product) }}"
-                    @else
-                        action="{{ route('editor-menu.store') }}"
-                    @endisset
-                    
-                    >
-                    @isset($product)
-                        <h1>Редактировать товар ID {{$product->id}}</h1>
-                    @else
-                        <h1>Добавить новый товар</h1>
-                    @endisset
+                        @isset($product)
+                            action="{{ route('editor-menu.update', $product) }}"
+                        @else
+                            action="{{ route('editor-menu.store') }}"
+                        @endisset
+                        
+                        >
+                        @isset($product)
+                            <h1>Редактировать товар ID {{$product->id}}</h1>
+                        @else
+                            <h1>Добавить новый товар</h1>
+                        @endisset
                         
                         <div>
                             @isset($product)
@@ -120,16 +120,16 @@
 
 
                             <div class="input-group row">
-                                <label for="image" class="col-sm-2 col-form-label">Картинка: </label>
+                                <label for="image" class="col-sm-2 col-form-label">Картинка (желательно квадратную): </label>
                                 <div class="col-sm-10" >
                                     <label class="btn btn-default btn-file" style="color:blue;">
-                                        Загрузить <input type="file" style="display: none;" name="image" id="image">
+                                        <input type="file" name="image" id="image">
                                     </label>
                                 </div>
                             </div>
                             <button class="btn btn-success">Сохранить</button>
                         </div>
-                </form>
+                    </form>
                         
                 </div>
             </div>

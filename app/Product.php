@@ -9,7 +9,7 @@ class Product extends Model
 {
     protected $table = 'pdproducts'; 
 
-    protected $fillable = ['name', 'description', 'composition', 'proteins', 'fats', 'carbohydrates', 'energy', 'price', 'pizza', 'sushi', 'drink', 'sweet'];
+    protected $fillable = ['name', 'description', 'composition', 'proteins', 'fats', 'carbohydrates', 'energy', 'price', 'pizza', 'sushi', 'drink', 'sweet', 'image'];
     
     public function getRouteKeyName() {
         return 'id';

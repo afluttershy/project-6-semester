@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -37,7 +38,14 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        Product::create($request->all());
+        //dd($request);
+        $path = $request->file('image')->store('products', 'public');
+        //dd($path);
+        $params = $request->all();
+        $params['image'] = $path;
+        Product::create($params);
+
+
         $products = Product::get();
         return view('editorMenu', compact('products'));
     }
@@ -75,9 +83,16 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-       // dd($product);
-        
-        $product->update($request->all());
+        // dd($product);
+     
+        Storage::delete($product->image);
+        $path = $request->file('image')->store('products', 'public');
+        //dd($path);
+        $params = $request->all();
+        $params['image'] = $path;
+        $product->update($params);
+
+
         $products = Product::get();
         return view('editorMenu', compact('products'));
     }
