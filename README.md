@@ -7,6 +7,9 @@
 | 171-332     | @afluttershy | Югансон А.Р. |
 
 ### Ссылка на проект:
+http://eda.std-234.ist.mospolytech.ru/
+
+Если не работает ФИТ, то:
 http://eda-project.herokuapp.com/
 
 ### Ссылка на лендинг проекта:
